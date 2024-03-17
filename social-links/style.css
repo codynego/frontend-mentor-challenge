@@ -55,6 +55,9 @@ html:focus-within {
 html, body {
   height: 100%;
   font-family: var(--ff-100);
+  color: var(--clr-neutral-100);
+  font-size: var(--size-100);
+  font-weight: 500;
 }
 
 /* A elements that don't have a class get default styles */
@@ -93,10 +96,92 @@ select {
   }
 }
 
+
+.clr-secondary {color: var(--clr-primary-100);}
 .bg-body { background-color: var(--clr-neutral-400); }
 
 .container {
   background-color: var(--clr-neutral-400);
   width: 100%;
   height: 100vh;
-} 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 100%;
+  padding: 20px;
+}
+
+
+.social-container {
+  background-color: var(--clr-neutral-300);
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.social-container .social-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+.social-container .social-profile img{
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+}
+
+.social-container .social-profile p:not(:last-of-type) {
+  font-size: 1.7rem
+}
+
+.social-container .social-bio {
+  margin-block: var(--size-200)
+}
+
+.social-container .social-links {
+  width: 100%;
+}
+
+.social-container .social-links .link {
+  border-radius: 10px;
+  background-color: var(--clr-neutral-200);
+  width: 100%;
+  margin-block: var(--size-300);
+  float: center;
+  padding: 15px;
+  display: grid;
+  place-items: center;
+
+}
+
+.social-container .social-links .link:hover {
+  background-color: var(--clr-primary-100);
+  color: var(--clr-neutral-400);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+
+@media (min-width: 461px) {
+
+  main {
+    display: grid;
+    place-items: center;
+  }
+
+  .social-container {
+    width: 40%;
+    height: 100%;
+    margin: 20px;
+  }
+
+
+}
+
