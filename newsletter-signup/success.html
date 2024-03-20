@@ -4,20 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Result</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="container">
+    <div class="success-page">
+      <img src="images/icon-success.svg" alt="">
+      <h2 class="fw-bold">Thanks for subscribing!</h2>
 
-<h2>Welcome</h2>
-<p id="success"></p>
+      <p>
+        A confirmation email has been sent to <span id="success" class="fw-bold"></span> Please open it and click the button inside to confirm your subscription.
+      </p>
+      <button class="btn-class">Dismiss message</button>
+    </div>
+  </div>
 
-<script>
-  const successPage = document.getElementsById("success")
-
-
-  const urlParams = new URLSearchParams(window.location.search);
-  const nname = urlParams.get('email');
-  successPage.innerText = nname
-</script>
+<script type="module" src="main.js"></script>
 
 </body>
 </html>
