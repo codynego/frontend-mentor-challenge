@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="main">
+      <form action="#" method="get">
+        <fieldset>
+          <div class="inputs">
+            <legend for="day">DAY</legend>
+            <input type="number" name="day" id="day">
+          </div>
+
+          <div class="inputs">
+            <legend for="month">MONTH</legend>
+            <input type="number" name="month" id="month">
+          </div>
+
+          <div class="inputs">
+            <legend for="year">YEAR</legend>
+            <input type="number" name="year" id="year">
+          </div>
+        </fieldset>
+      </form>
+
+      <div class="btn">
+        <img src="images/icon-arrow.svg" alt="">
+      </div>
+
+      <div class="output">
+        <h1><span class="year"></span> YEARS</h1>
+        <h1><span class="month"></span>MONTHS</h1>
+        <h1><span class="day"></span>DAYS</h1>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
