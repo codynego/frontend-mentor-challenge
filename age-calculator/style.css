@@ -91,19 +91,19 @@ select {
 
 .container {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--clr-neutral-200);
   padding-inline: 20px;
-  padding-top: 100px;
+  padding-block: 100px;
 }
 
 .main {
   background-color: var(--clr-neutral-100);
   border-radius: 20px 20px 100px 20px;
-  padding: 20px;
+  padding: 30px;
 }
 form {
-  margin-block: 40px;
+  margin-block: 30px;
 }
 form fieldset{
   display: grid;
@@ -113,13 +113,25 @@ form fieldset{
 }
 
 .inputs input {
-  padding: 35px;
+  padding: 10px;
   width: 100%;
-  border-radius: 15px;
+  border-radius: 5px;
   border: 3px solid var(--clr-neutral-200);
   font-size: var(--fs-100);
+  font-weight: var(--fw-200);
 }
 
+.inputs input:hover,
+.inputs input:focus {
+  outline: none;
+  border: 3px solid var(--clr-primary-100);
+}
+
+.inputs > legend {
+  color: var(--clr-neutral-400);
+  font-weight: var(--fw-100);
+  margin-bottom: 10px;
+}
 .btn {
   position: relative;
   width: 100%;
@@ -127,12 +139,12 @@ form fieldset{
   background-color: var(--clr-neutral-200);
   display: flex;
   justify-content: center;
-  margin-block: 60px;
+  margin-block: 40px;
 
 }
 
 .btn img {
-  background-color: var(--clr-primary-100);
+  background-color: var(--clr-neutral-500);
   position: absolute;
   margin-top: -20px;
   border-radius: 50%;
@@ -140,7 +152,75 @@ form fieldset{
   width: 50px;
 }
 
+.btn img:hover {
+  background-color: var(--clr-neutral-400)
+}
+
+
+
 
 .output {
-
+  width: 100%;
+  font-size: 2.6rem;
+  font-weight: var(--fw-300);
+  overflow: hidden;
 }
+
+.output span {
+  color: var(--clr-primary-100)
+}
+
+.errors {
+  color: var(--clr-primary-200);
+  padding-top: 5px;
+  font-size: 15px;
+}
+
+
+@media (min-width: 800px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .main {
+    width: 50%;
+    margin-block: 20px;
+  }
+
+  .btn img {
+    right: 0;
+  }
+
+  fieldset {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .inputs {
+    width: 80%;
+  }
+
+  .inputs input {
+    padding: 15px;
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid var(--clr-neutral-200);
+    font-size: 18px;
+    font-weight: var(--fw-200);
+  }
+
+  form fieldset{
+    display: flex;
+    justify-content: flex-start;
+    margin-right: 100px;
+  }
+
+  .output {
+    font-size: 3.5rem;
+  }
+}
+
