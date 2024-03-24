@@ -166,7 +166,7 @@ select {
   display: block;
 }
 
-@media (min-width: 378px) {
+@media (min-width: 478px) {
   .container .bg-header {
     background-image: url("images/background-pattern-desktop.svg");
   }
@@ -179,5 +179,12 @@ select {
     right: 30%;
     border-radius: 5px;
     padding: 20px;
+  }
+}
+
+@media (width <= 700px) and (width >=478px) {
+  .main-faq {
+    left: 20%;
+    right: 20%;
   }
 }

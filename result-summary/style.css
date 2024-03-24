@@ -1,0 +1,252 @@
+:root {
+  --clr-primary-100:  hsl(0, 100%, 67%);
+  --clr-primary-200: hsl(39, 100%, 56%);
+  --clr-primary-300:hsl(166, 100%, 37%);
+  --clr-primary-400: hsl(234, 85%, 45%);
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(221, 100%, 96%);
+  --clr-neutral-300: hsl(241, 100%, 89%);
+  --clr-neutral-400: hsl(224, 30%, 27%);
+
+  --clr-gradient-100: hsl(252, 100%, 67%);
+  --clr-gradient-200: hsl(241, 81%, 54%);
+  --clr-gradient-300: hsla(256, 72%, 46%, 1);
+  --clr-gradient-400:  hsla(241, 72%, 46%, 0);
+
+  --fs-100: 16px;
+
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+html, body {
+  height: 100%;
+  font-family: "Roboto", sans-serif;;
+  font-size: var(--fs-100);
+  font-weight: 400;
+  color: var(--clr-neutral-500);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+
+.container {
+  width: 100%;
+  height: 100vh;
+  color: var(--clr-neutral-100);
+}
+
+.container .result {
+  background-image: linear-gradient(to bottom, hsl(252, 100%, 67%),hsl(241, 81%, 54%));
+  border-radius: 0px 0px 35px 35px;
+
+  display: grid;
+  grid-template-rows: repeat(3 * 1fr);
+  place-items: center;
+  padding: 20px;
+  color: var(--clr-neutral-300)
+}
+
+.grid-bg {
+  background-image: linear-gradient(to bottom, hsla(256, 72%, 46%, 1),hsla(241, 72%, 46%, 0));
+  border-radius: 50%;
+  width: 110px;
+  aspect-ratio: 1 / 1;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  margin-block: 30px;  
+}
+
+.grid-bg span {
+  display: block;
+  font-size: 3rem;
+  padding: 2px;
+  color: var(--clr-neutral-100)
+}
+
+.result-summary {
+  text-align: center;
+}
+.result-summary p {
+  padding: 3px;
+}
+
+.result-summary p:first-of-type {
+  color: var(--clr-neutral-100);
+}
+
+.summary {
+  color: var(--clr-neutral-400);
+  font-weight: 700;
+  font-size: 14px;
+  display: grid;
+  place-items: center;
+  padding: 30px;
+}
+
+.summary h2 {
+  margin-top: 10px;
+  font-size: 16px;
+  place-self: start;
+}
+
+.summary button {
+  background-color: var(--clr-neutral-400);
+  color: white;
+  padding: 15px 30px;
+  width: 100%;
+  border: none;
+  border-radius: 25px;
+  
+}
+.summary button:hover {
+  opacity: .9;
+  cursor: pointer;
+}
+
+.summary button:focus {
+  background-image: linear-gradient(to bottom, hsl(252, 100%, 67%),hsl(241, 81%, 54%));
+}
+
+.summary-items {
+  width: 100%;
+}
+.summary-item {
+  margin-block: 14px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  flex-wrap: wrap;
+}
+
+.summary-item > p {
+  color: hsl(224, 30%, 27%, 0.5);
+  font-weight: 700;
+}
+
+.summary-item span {
+  color: var(--clr-neutral-400);
+  font-weight: 700;
+}
+
+
+.summary-item[data-theme-type="accent-1"] {
+  background-color: hsl(0, 100%, 67%, 0.3);
+  color: var(--clr-primary-100);
+}
+
+.summary-item[data-theme-type="accent-2"] {
+  background-color: hsla(39, 100%, 56%, 0.3);
+  color: var(--clr-primary-200);
+}
+
+
+.summary-item[data-theme-type="accent-3"] {
+  background-color: hsl(166, 100%, 37%, 0.3);
+  color: var(--clr-primary-300);
+}
+
+.summary-item[data-theme-type="accent-4"] {
+  background-color: hsl(234, 85%, 45%, 0.3);
+  color: var(--clr-primary-400);
+}
+
+
+.summary-item .item-text {
+  display: flex;
+  gap: 10px
+}
+
+@media (min-width: 600px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: calc(var(--fs-100) * 1.3);
+  }
+
+  .container .result {
+    border-radius: 0px 35px 35px 0px;
+  }
+
+  .summary-item {
+    padding: 30px;
+    margin-block: 30px;
+    color: blue;
+  }
+
+  .grid-bg {
+    width: 200px; 
+  }
+
+  .grid-bg span {
+    font-size: 4rem;
+  }
+
+  .summary h2 {
+    margin-top: 50px;
+    font-size: calc(var(--fs-100) * 1.5);
+  }
+}
