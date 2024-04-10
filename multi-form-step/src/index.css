@@ -1,0 +1,308 @@
+:root {
+  --clr-primary-100: hsl(213, 96%, 18%);
+  --clr-primary-200: hsl(243, 100%, 62%);
+  --clr-primary-300: hsl(228, 100%, 84%);
+  --clr-primary-400: hsl(206, 94%, 87%);
+  --clr-primary-500: hsl(354, 84%, 57%);
+
+  --clr-neutral-100: hsl(231, 11%, 63%);
+  --clr-neutral-200: hsl(229, 24%, 87%);
+  --clr-neutral-300: hsl(217, 100%, 97%);
+  --clr-neutral-400: hsl(231, 100%, 99%);
+  --clr-neutral-500: hsl(0, 0%, 100%);
+
+  --fs-100: 16px;
+  --fs-200: 2rem;
+
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-700: 700;
+
+  --clr-text-primary: var(--clr-neutral-100);
+  --clr-text-secondary: var(--clr-primary-100);
+
+
+}
+
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+html, body {
+  height: 100%;
+  font-family: "Roboto", sans-serif;;
+  font-size: var(--fs-100);
+  font-weight: 700;
+  color: var(--clr-neutral-500);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--clr-neutral-300);
+  position: relative;
+
+}
+
+.header {
+  background-image: url(/src/assets/bg-sidebar-mobile.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 25vh;
+  padding: 1rem;
+}
+
+nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  
+}
+
+ol {
+  list-style-type: none;
+  color: var(--clr-neutral-500);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 100%;
+  padding: 10px;
+  gap: 14px;
+}
+
+
+ol li a {
+  text-decoration: none;
+}
+
+ol li span {
+  background-color: transparent;
+  border: 2px solid var(--clr-neutral-500);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--clr-neutral-500);
+}
+
+
+ol li span:active,
+ol li span:hover {
+  background-color: var(--clr-primary-400);
+  color: var(--clr-primary-100);
+  border: none;
+  padding: 9px;
+  transition: width ease-out 250ms ;
+}
+
+ol li div {
+  display: none;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  background-color: var(--clr-neutral-500);
+  padding: 30px;
+  color: var(--clr-primary-100);
+  margin-inline: 16px;
+  position: absolute;
+  border-radius: 15px;
+  top: 80px;
+  display: grid;
+  gap: 16px;
+}
+
+.content h1 {
+  font-size: 1.7rem;
+  margin-top: 10px;
+}
+
+.content p {
+  color: var(--clr-neutral-200);
+}
+
+
+
+.grid-items {
+  border: none;
+  display: grid;
+  gap: 14px;
+}
+
+.grid-items .grid-item {
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid var(--clr-neutral-100);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.grid-items .grid-item:hover {
+  opacity: 70%;
+  border: 2px solid var(--clr-neutral-100);
+}
+
+.item {
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 12px;
+}
+
+.grid-items .grid-item p:first-child {
+  color: var(--clr-primary-100);
+  font-size: 14px;
+  
+}
+
+.grid-item > p {
+  justify-self: flex-end;
+}
+.content form {
+  margin-bottom: 10px;
+}
+
+.content form fieldset legend {
+  font-size: 14px;
+  margin-bottom: 2px;
+  font-weight: 500;
+}
+
+.content form fieldset input {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+  outline: none;
+  border: 1px solid var(--clr-neutral-100);
+  border-radius: 5px;
+  color: var(--clr-neutral-100);
+}
+
+.btn-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  background-color: var(--clr-neutral-300);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+
+.grid-item input[type="checkbox"] {
+  padding: 70px;
+  width: 18px;
+  height: 18px;
+}
+
+.footer {
+  width: 100%;
+  color: black;
+  position: absolute;
+  bottom: 0;
+  background-color: var(--clr-neutral-500);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  color: var(--clr-neutral-200);
+}
+
+.footer button {
+  background-color: var(--clr-primary-200);
+  padding: 10px;
+  border: none;
+  color: var(--clr-neutral-500);
+  border-radius: 2px;
+}
+
+.togglee legend{
+  background-color: blue;
+  padding: 12px;
+  width: 50px;
+  position: relative;
+  border-radius: 15px;
+}
+
+.togglee legend:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border-radius: 15px;
+}
